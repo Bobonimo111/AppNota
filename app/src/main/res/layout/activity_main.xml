@@ -7,23 +7,121 @@
     tools:context=".MainActivity">
 
     <LinearLayout
-        android:layout_width="409dp"
-        android:layout_height="729dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="1dp"
-        android:gravity="bottom"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="20dp"
+        android:gravity="top"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <EditText
+
+            android:id="@+id/editTextTextPersonNameCodigo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="codigo/nome"
+            android:paddingVertical="20dp"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/editTextNumberDecimalDinheiro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Dinheiro"
+            android:paddingVertical="20dp"
+            android:inputType="numberDecimal" />
+
+        <EditText
+            android:id="@+id/editTextNumberDecimalPix"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="PIX"
+            android:paddingVertical="20dp"
+            android:inputType="numberDecimal" />
+
+        <EditText
+            android:id="@+id/editTextNumberDecimalMoeda"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Moeda"
+
+            android:paddingVertical="20dp"
+            android:inputType="numberDecimal" />
+
+        <EditText
+            android:id="@+id/editTextNumberDecimalDespesa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Despesa"
+            android:paddingVertical="20dp"
+            android:inputType="numberDecimal" />
+
+        <EditText
+            android:id="@+id/editTextNumberDecimalPremio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Premio"
+            android:paddingVertical="20dp"
+            android:inputType="numberDecimal" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <EditText
+                android:id="@+id/editTextTextPersonNameOutrosName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="Outros"
+                android:inputType="textPersonName"
+
+                android:paddingVertical="20dp" />
+
+            <EditText
+                android:id="@+id/editTextTextPersonNameOutros"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Valor"
+                android:inputType="textPersonName"
+                android:paddingVertical="20dp" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/editTextTextPersonNameTotal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:paddingVertical="20dp"
+            android:hint="Total"
+            android:inputType="textPersonName" />
+
         <Button
             android:id="@+id/buttonCreate"
             android:layout_width="match_parent"
             android:layout_height="68dp"
-            android:text="Create" />
+            android:text="Criar Lista" />
+
+        <Button
+            android:id="@+id/buttonView"
+            android:layout_width="match_parent"
+            android:layout_height="68dp"
+            android:text="Visualisar lista3" />
+
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

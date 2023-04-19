@@ -37,7 +37,10 @@ public class CopyScreen extends AppCompatActivity {
         buttonClip.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 copyToClipBoar(notaContextualizada);
+                Funcoes.toastMsg(getApplicationContext(),"Adicionado ao campo de tranferencia");
+
             }
         });
 
@@ -51,7 +54,7 @@ public class CopyScreen extends AppCompatActivity {
 
         String notaContextualizada = "";
         for (String linha:nota) {
-            notaContextualizada = notaContextualizada + linha +"\n";
+            notaContextualizada = notaContextualizada + linha +"\n\n";
         }
         return  notaContextualizada;
 
