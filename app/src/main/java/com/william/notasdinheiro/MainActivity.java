@@ -1,6 +1,13 @@
 package com.william.notasdinheiro;
 
+import static android.support.v4.content.ContextCompat.getSystemService;
+
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -46,7 +53,8 @@ public class MainActivity extends AppCompatActivity {
 
 
         buttonCreate = findViewById(R.id.buttonCreate);
-        buttonView = findViewById(R.id.buttonView);
+//        Butão desabilitato pois foi removido na nova versão
+//        buttonView = findViewById(R.id.buttonView);
 
         buttonCreate.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -81,7 +89,9 @@ public class MainActivity extends AppCompatActivity {
                     }
                     nota.add(Funcoes.formatLinha("*Total*",editTextTextPersonNameTotal.getText().toString()));
 
-                    Funcoes.toastMsg(getApplicationContext(),"Lista criada");
+                    dialogPrompt(Funcoes.escreverNota(nota),"notas");
+
+
                     //O campo outros deve ocorrer uma verificação aplicar um titulo a ele
                 }
                 Log.i("desenvolvimento","Botão clicado create ");
@@ -103,5 +113,28 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public  void copyToClipBoar(String nota){
+        ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+        ClipData clip = ClipData.newPlainText("nota",nota);
+        clipboard.setPrimaryClip(clip);
+
+    }
+    public void dialogPrompt(String msg, String title){
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setMessage(msg);
+        builder.setNeutralButton("Copy", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                Funcoes.toastMsg(getApplicationContext(),"Copiada");
+                copyToClipBoar(msg);
+
+            }
+        });
+
+        builder.show();
+
+
+    }
 
 }

@@ -28,6 +28,8 @@ public class CopyScreen extends AppCompatActivity {
         ArrayList<String> nota;
         nota = receberNota();
 
+
+
         String notaContextualizada = escreverNota(nota);
 
         textViewNota.setText(notaContextualizada);

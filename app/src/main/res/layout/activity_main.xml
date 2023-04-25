@@ -109,19 +109,13 @@
             android:ems="10"
             android:paddingVertical="20dp"
             android:hint="Total"
-            android:inputType="textPersonName" />
+            android:inputType="numberDecimal" />
 
         <Button
             android:id="@+id/buttonCreate"
             android:layout_width="match_parent"
             android:layout_height="68dp"
             android:text="Criar Lista" />
-
-        <Button
-            android:id="@+id/buttonView"
-            android:layout_width="match_parent"
-            android:layout_height="68dp"
-            android:text="Visualisar lista3" />
 
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

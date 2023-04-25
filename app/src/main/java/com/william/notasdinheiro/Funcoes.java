@@ -1,12 +1,19 @@
 package com.william.notasdinheiro;
 
+import static android.support.v4.content.ContextCompat.getSystemService;
+
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.text.InputType;
 import android.widget.EditText;
 import android.widget.Toast;
+
+
+import java.util.ArrayList;
 
 public class Funcoes {
     public static void dialogMsg(Context atividade, String dialog_message, String dialog_title){
@@ -60,4 +67,14 @@ public class Funcoes {
         return String.format("%-40s \n %s",nome,campo);
 
     }
+    public static String escreverNota(ArrayList<String> nota){
+
+        String notaContextualizada = "";
+        for (String linha:nota) {
+            notaContextualizada = notaContextualizada + linha +"\n\n";
+        }
+        return  notaContextualizada;
+
+    }
+
 }
