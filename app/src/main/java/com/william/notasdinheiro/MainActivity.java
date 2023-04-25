@@ -21,7 +21,8 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     private Button buttonCreate,
-            buttonView;
+            buttonView
+            ;
     private EditText editTextTextPersonNameCodigo,
             editTextNumberDecimalDinheiro,
             editTextNumberDecimalPix,
@@ -37,14 +38,26 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         this.editTextTextPersonNameCodigo = findViewById(R.id.editTextTextPersonNameCodigo);
+
         this.editTextNumberDecimalDinheiro  = findViewById(R.id.editTextNumberDecimalDinheiro);
         this.editTextNumberDecimalPix  = findViewById(R.id.editTextNumberDecimalPix);
         this.editTextNumberDecimalMoeda  = findViewById(R.id.editTextNumberDecimalMoeda);
         this.editTextNumberDecimalDespesa  = findViewById(R.id.editTextNumberDecimalDespesa);
         this.editTextNumberDecimalPremio  = findViewById(R.id.editTextNumberDecimalPremio);
         this.editTextTextPersonNameOutros = findViewById(R.id.editTextTextPersonNameOutros);
+
         this.editTextTextPersonNameTotal = findViewById(R.id.editTextTextPersonNameTotal);
+
         this.editTextTextPersonNameOutrosName = findViewById(R.id.editTextTextPersonNameOutrosName);
+
+        atualizarTotal atvT = new atualizarTotal();
+        this.editTextNumberDecimalDinheiro.setOnFocusChangeListener(atvT);
+        this.editTextNumberDecimalPix.setOnFocusChangeListener(atvT);
+        this.editTextNumberDecimalMoeda.setOnFocusChangeListener(atvT);
+        this.editTextNumberDecimalDespesa.setOnFocusChangeListener(atvT);
+        this.editTextNumberDecimalPremio.setOnFocusChangeListener(atvT);
+        this.editTextTextPersonNameOutros.setOnFocusChangeListener(atvT);
+
 
         //Teste
 //        nota.add("william");
@@ -98,13 +111,13 @@ public class MainActivity extends AppCompatActivity {
                 //sendObject(nota);
             }
         });
-        buttonView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Log.i("desenvolvimento","Botão clicado View");
-                sendObject(nota);
-            }
-        });
+//        buttonView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Log.i("desenvolvimento","Botão clicado View");
+//                sendObject(nota);
+//            }
+//        });
     }
 
     public void sendObject(ArrayList<String> nota){
@@ -136,5 +149,45 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+    public class atualizarTotal implements View.OnFocusChangeListener{
+        @Override
+        public void onFocusChange(View v,boolean hasFocus){
+
+            Double total = 0.0;
+            if(hasFocus){
+                //Não faz nada quando um campo for focado e sim quando ele for desfocado
+            }else{
+
+                if(!editTextNumberDecimalDinheiro.getText().toString().equals("")){
+                    total += Double.parseDouble(editTextNumberDecimalDinheiro.getText().toString());
+                }
+                if(!editTextNumberDecimalPix.getText().toString().equals("")){
+                    total += Double.parseDouble(editTextNumberDecimalPix.getText().toString());
+                }
+                if(!editTextNumberDecimalMoeda.getText().toString().equals("")){
+                    total += Double.parseDouble(editTextNumberDecimalMoeda.getText().toString());
+                }
+                if(!editTextNumberDecimalDespesa.getText().toString().equals("")){
+                    total += Double.parseDouble(editTextNumberDecimalDespesa.getText().toString());
+                }
+                if(!editTextNumberDecimalPremio.getText().toString().equals("")){
+                    total += Double.parseDouble(editTextNumberDecimalPremio.getText().toString());
+                }
+                if(!editTextTextPersonNameOutros.getText().toString().equals("")){
+                    try{
+
+                        total += Double.parseDouble(editTextTextPersonNameOutros.getText().toString());
+
+                    }catch(Exception ex){
+                        Log.e("desenvolvimento","somar no HasFocus"+ex);
+                    };
+                }
+                editTextTextPersonNameTotal.setText(total.toString());
+
+            }
+        }
+    }
+
 
 }
