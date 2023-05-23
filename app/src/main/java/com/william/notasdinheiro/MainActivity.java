@@ -32,24 +32,20 @@ public class MainActivity extends AppCompatActivity {
             editTextTextPersonNameOutros,
             editTextTextPersonNameTotal,
             editTextTextPersonNameOutrosName;
+
+    private Button buttonTrashNome,
+            buttonTrashDinheiro,
+            buttonTrashPix,
+            buttonTrashMoeda,
+            buttonTrashDespesa,
+            buttonTrashPremio;
+
     private ArrayList<String> nota = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        this.editTextTextPersonNameCodigo = findViewById(R.id.editTextTextPersonNameCodigo);
-
-        this.editTextNumberDecimalDinheiro  = findViewById(R.id.editTextNumberDecimalDinheiro);
-        this.editTextNumberDecimalPix  = findViewById(R.id.editTextNumberDecimalPix);
-        this.editTextNumberDecimalMoeda  = findViewById(R.id.editTextNumberDecimalMoeda);
-        this.editTextNumberDecimalDespesa  = findViewById(R.id.editTextNumberDecimalDespesa);
-        this.editTextNumberDecimalPremio  = findViewById(R.id.editTextNumberDecimalPremio);
-        this.editTextTextPersonNameOutros = findViewById(R.id.editTextTextPersonNameOutros);
-
-        this.editTextTextPersonNameTotal = findViewById(R.id.editTextTextPersonNameTotal);
-
-        this.editTextTextPersonNameOutrosName = findViewById(R.id.editTextTextPersonNameOutrosName);
-
+        setFindViewById();
         atualizarTotal atvT = new atualizarTotal();
         this.editTextNumberDecimalDinheiro.setOnFocusChangeListener(atvT);
         this.editTextNumberDecimalPix.setOnFocusChangeListener(atvT);
@@ -58,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
         this.editTextNumberDecimalPremio.setOnFocusChangeListener(atvT);
         this.editTextTextPersonNameOutros.setOnFocusChangeListener(atvT);
 
+        this.buttonTrashNome.setOnClickListener(new ClearTextViewsOnClickListener(this.editTextTextPersonNameCodigo));
 
         //Teste
 //        nota.add("william");
@@ -120,6 +117,25 @@ public class MainActivity extends AppCompatActivity {
 //        });
     }
 
+    private void setFindViewById(){
+        this.editTextTextPersonNameCodigo = findViewById(R.id.editTextTextPersonNameCodigo);
+        this.editTextNumberDecimalDinheiro  = findViewById(R.id.editTextNumberDecimalDinheiro);
+        this.editTextNumberDecimalPix  = findViewById(R.id.editTextNumberDecimalPix);
+        this.editTextNumberDecimalMoeda  = findViewById(R.id.editTextNumberDecimalMoeda);
+        this.editTextNumberDecimalDespesa  = findViewById(R.id.editTextNumberDecimalDespesa);
+        this.editTextNumberDecimalPremio  = findViewById(R.id.editTextNumberDecimalPremio);
+        this.editTextTextPersonNameOutros = findViewById(R.id.editTextTextPersonNameOutros);
+        this.editTextTextPersonNameTotal = findViewById(R.id.editTextTextPersonNameTotal);
+        this.editTextTextPersonNameOutrosName = findViewById(R.id.editTextTextPersonNameOutrosName);
+
+        this.buttonTrashNome = findViewById(R.id.buttonTrashNome);
+        this.buttonTrashPremio= findViewById(R.id.buttonTrashPremio);
+        this.buttonTrashDinheiro = findViewById(R.id.buttonTrashDinheiro);
+        this.buttonTrashPix= findViewById(R.id.buttonTrashPix);
+        this.buttonTrashMoeda= findViewById(R.id.buttonTrashMoeda);
+        this.buttonTrashDespesa= findViewById(R.id.buttonTrashDespesa);
+
+    }
     public void sendObject(ArrayList<String> nota){
         Intent intent = new Intent(this,CopyScreen.class);
         intent.putStringArrayListExtra("nota",nota);
@@ -190,4 +206,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+
 }
+;
