@@ -55,7 +55,11 @@ public class MainActivity extends AppCompatActivity {
         this.editTextTextPersonNameOutros.setOnFocusChangeListener(atvT);
 
         this.buttonTrashNome.setOnClickListener(new ClearTextViewsOnClickListener(this.editTextTextPersonNameCodigo));
-
+        this.buttonTrashPremio.setOnClickListener(new ClearTextViewsOnClickListener(this.editTextNumberDecimalPremio));
+        this.buttonTrashDinheiro.setOnClickListener(new ClearTextViewsOnClickListener(this.editTextNumberDecimalDinheiro));
+        this.buttonTrashPix.setOnClickListener(new ClearTextViewsOnClickListener(this.editTextNumberDecimalPix));
+        this.buttonTrashMoeda.setOnClickListener(new ClearTextViewsOnClickListener(this.editTextNumberDecimalMoeda));
+        this.buttonTrashDespesa.setOnClickListener(new ClearTextViewsOnClickListener(this.editTextNumberDecimalDespesa));
         //Teste
 //        nota.add("william");
 //        nota.add("R$ 234");

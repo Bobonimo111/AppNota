@@ -39,8 +39,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@drawable/icons8_trash_48"
-                android:scaleX="0.5"
-                android:scaleY="0.5" />
+                android:scaleX="1"
+                android:scaleY="1" />
 
         </LinearLayout>
 
@@ -64,8 +64,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@drawable/icons8_trash_48"
-                android:scaleX="0.5"
-                android:scaleY="0.5" />
+                android:scaleX="1"
+                android:scaleY="1" />
         </LinearLayout>
 
         <LinearLayout
@@ -88,8 +88,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@drawable/icons8_trash_48"
-                android:scaleX="0.5"
-                android:scaleY="0.5" />
+                android:scaleX="1"
+                android:scaleY="1" />
         </LinearLayout>
 
         <LinearLayout
@@ -113,8 +113,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@drawable/icons8_trash_48"
-                android:scaleX="0.5"
-                android:scaleY="0.5" />
+                android:scaleX="1"
+                android:scaleY="1" />
         </LinearLayout>
 
         <LinearLayout
@@ -137,8 +137,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@drawable/icons8_trash_48"
-                android:scaleX="0.5"
-                android:scaleY="0.5" />
+                android:scaleX="1"
+                android:scaleY="1" />
         </LinearLayout>
 
         <LinearLayout
@@ -161,8 +161,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@drawable/icons8_trash_48"
-                android:scaleX="0.5"
-                android:scaleY="0.5" />
+                android:scaleX="1"
+                android:scaleY="1" />
         </LinearLayout>
 
         <LinearLayout
