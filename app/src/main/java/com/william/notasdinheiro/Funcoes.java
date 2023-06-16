@@ -1,15 +1,7 @@
 package com.william.notasdinheiro;
 
-import static android.support.v4.content.ContextCompat.getSystemService;
-
-import android.app.Activity;
 import android.app.AlertDialog;
-import android.content.ClipData;
-import android.content.ClipboardManager;
 import android.content.Context;
-import android.content.DialogInterface;
-import android.text.InputType;
-import android.widget.EditText;
 import android.widget.Toast;
 
 
